@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const rand = (min, max) => {
+      return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+
+    const resultA = [] // 用來存不重複的數字
+
+    while (resultA.length < 6) {
+      const num = rand(1, 38)
+
+      // 檢查有沒有重複
+      if (!resultA.includes(num)) {
+        resultA.push(num)
+      }
+    }
+
+    // 印出結果
+    for (let i = 0; i < resultA.length; i++) {
+      document.write('A區：<br>')
+      document.write('<p>' + resultA[i] + '</p>')
+    }
+
+    const resultB = rand(1, 8)
+    document.write('B區：<br>')
+    document.write(resultB)
+
+  </script>
+</body>
+
+</html>
